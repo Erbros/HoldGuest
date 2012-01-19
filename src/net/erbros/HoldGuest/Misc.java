@@ -138,8 +138,9 @@ class Misc {
         locationConfig.set("spawnhold.x", plugin.x);
         locationConfig.set("spawnhold.y", plugin.y);
         locationConfig.set("spawnhold.z", plugin.z);
-        locationConfig.set("world",plugin.world.getName());
+        locationConfig.set("spawnhold.world",plugin.world.getName());
         saveYamls();
+        loadConfig();
     }
 
     

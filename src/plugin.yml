@@ -1,0 +1,21 @@
+name: HoldGuest
+main: net.erbros.HoldGuest.HoldGuest
+version: 0.0.1
+author: Erbros
+website: www.erbros.net
+commands:
+  holdguest:
+    description: Information regarding usage of HoldGuard.
+    usage: /<command>
+    aliases: []
+permissions:
+    holdguest.*:
+        description: Have all the permissions
+        children:
+            holdguest.nohold: true
+    holdguest.nohold:
+      description: Give this to the groups you don't want to be held inside your zone.
+      default: false
+    holdguest.sethold:
+      description: Lets the user set the guesthold location.
+      default: op

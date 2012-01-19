@@ -1,0 +1,18 @@
+# Some base settings for HoldGuest
+# 
+# radius_block: 30
+# How many blocks from the center of the sphere will you 
+# let the player wanter?
+#
+# check_moving: 1.5
+# How often (in seconds) do you want to check if the player
+# is moving outside of the zone?
+# Doing this too often can produce some stress to the server.
+#
+# config_version: 1
+# Don't change this. I will increase it if the config changes
+# and then you will have to remove the current one and let
+# the plugin create a new one.
+radius_block: 30
+check_moving_sec: 1.5
+config_version: 1

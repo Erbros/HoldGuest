@@ -1,0 +1,32 @@
+# Configuration for all the messages in the plugin
+# 
+# keepinside: Read the rules and then ask for permission.
+# What message should be given when the guest try to 
+# leave the zone?
+# 
+# holdguestheader: --- HoldGuest ---
+# The header that is shown on commands.
+# 
+# centerhelp: /holdguest center - Set center.
+# Help on setting the center of the zone
+# 
+# radiushelp: /holdguest radius <blocks> - Set radius.
+# Help on setting the radius of the zone
+# 
+# centerset: Center have now been set.
+# Msg on successfully changing center.
+# 
+# radiusset: Radius have now been set.
+# Msg on successfully changing radius.
+# 
+# noconsole: You can't do that trough the console.
+# Msg when you try using a command unavailable for 
+# the console.
+# 
+keepinside: Read the rules and then ask for permission.
+holdguestheader: '--- HoldGuest ---'
+centerhelp: /holdguest center - Set center.
+radiushelp: /holdguest radius <blocks> - Set radius.
+centerset: Center have now been set.
+radiusset: Radius have now been set.
+noconsole: You can't do that trough the console.

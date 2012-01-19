@@ -132,11 +132,13 @@ class Misc {
         plugin.x = l.getX();
         plugin.y = l.getY();
         plugin.z = l.getZ();
+        plugin.world = l.getWorld();
         plugin.vector = new Vector(plugin.x, plugin.y, plugin.z);
         
         locationConfig.set("spawnhold.x", plugin.x);
         locationConfig.set("spawnhold.y", plugin.y);
         locationConfig.set("spawnhold.z", plugin.z);
+        locationConfig.set("world",plugin.world.getName());
         saveYamls();
     }
 

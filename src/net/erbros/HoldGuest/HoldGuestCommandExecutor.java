@@ -64,6 +64,7 @@ class HoldGuestCommandExecutor implements CommandExecutor {
                 
                 sender.sendMessage( misc.customMessage( "holdguestheader" ) );
                 sender.sendMessage( misc.customMessage( "reloaded" ) );
+                misc.loadConfig();
                 
             }
             return true;

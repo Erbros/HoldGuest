@@ -119,6 +119,10 @@ class Misc {
         else if( mid.equalsIgnoreCase("noconsole")) 
         {
             return msgConfig.getString("noconsole", "You can't do that trough the console.");
+        } 
+        else if( mid.equalsIgnoreCase("reloaded")) 
+        {
+            return msgConfig.getString("reloaded", "The configuration was reloaded.");
         }
         return "Failed to find reply";
     }

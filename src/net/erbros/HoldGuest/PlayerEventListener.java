@@ -35,6 +35,7 @@ class PlayerEventListener extends PlayerListener {
 	        plugin.log.info("Allowed to stay outside of box");
 	        return;
 	    }
+	    
 	    plugin.log.info("vector: " + plugin.vector);
         plugin.log.info("curVec: " + p.getLocation().toVector());
         plugin.log.info("holdradius: " + plugin.holdradius);
@@ -49,6 +50,10 @@ class PlayerEventListener extends PlayerListener {
 	        }
 	        return;
 	    }
+	    
+	    // Not working right now.
+	    // p.sendMessage( misc.customMessage("keepinside"));
+	    p.sendMessage("Read the rules and then ask for permission.");
 	    
 	    // Okay, the player is outside the field and have no permission? We should help him inside. 
 	    //Let's first check if he recently went outside and we have the old location in cache.

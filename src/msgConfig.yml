@@ -23,6 +23,9 @@
 # Msg when you try using a command unavailable for 
 # the console.
 # 
+# reloaded: The configuration was reloaded.
+# What to say when the plugin gets reloaded 
+# with /holdguest reload
 keepinside: Read the rules and then ask for permission.
 holdguestheader: '--- HoldGuest ---'
 centerhelp: /holdguest center - Set center.
@@ -30,3 +33,4 @@ radiushelp: /holdguest radius <blocks> - Set radius.
 centerset: Center have now been set.
 radiusset: Radius have now been set.
 noconsole: You can't do that trough the console.
+reloaded: The configuration was reloaded.

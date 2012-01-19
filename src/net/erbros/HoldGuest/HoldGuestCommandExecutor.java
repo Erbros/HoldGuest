@@ -19,6 +19,9 @@ class HoldGuestCommandExecutor implements CommandExecutor {
         if(args.length > 0) {
             if (args[0].equalsIgnoreCase("center")) {
                 if(sender instanceof Player) {
+                    if(!sender.hasPermission("holdguest.setcenter"))
+                        return false;
+                    
                     misc.setCenter( (Player) sender);
                     sender.sendMessage( misc.customMessage( "holdguestheader" ) );
                     sender.sendMessage( misc.customMessage( "centerset" ) );
@@ -29,6 +32,10 @@ class HoldGuestCommandExecutor implements CommandExecutor {
                     return true;
                 }
             } else if (args[0].equalsIgnoreCase("radius")) {
+                if(sender instanceof Player) {
+                    if(!sender.hasPermission("holdguest.setradius"))
+                        return false;
+                }
                 // No radius arg?
                 if(args.length == 1) {
                     sender.sendMessage( misc.customMessage( "holdguestheader" ) );
@@ -49,6 +56,15 @@ class HoldGuestCommandExecutor implements CommandExecutor {
                 sender.sendMessage( misc.customMessage( "radiusset" ) );
                 misc.setRadius(radius);
                 return true;
+            } else if (args[0].equalsIgnoreCase("reload")) {
+                if(sender instanceof Player) {
+                    if(!sender.hasPermission("holdguest.reload"))
+                        return false;
+                }
+                
+                sender.sendMessage( misc.customMessage( "holdguestheader" ) );
+                sender.sendMessage( misc.customMessage( "reloaded" ) );
+                
             }
             return true;
         }

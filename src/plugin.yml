@@ -13,9 +13,18 @@ permissions:
         description: Have all the permissions
         children:
             holdguest.nohold: true
+            holdguest.setcenter: true
+            holdguest.setradius: true
+            holdguest.reload: true
     holdguest.nohold:
       description: Give this to the groups you don't want to be held inside your zone.
       default: false
-    holdguest.sethold:
+    holdguest.setcenter:
       description: Lets the user set the guesthold location.
+      default: op
+    holdguest.setradius:
+      description: Lets the user set the guesthold radius.
+      default: op
+    holdguest.reload:
+      description: Lets the user reload the configuration.
       default: op

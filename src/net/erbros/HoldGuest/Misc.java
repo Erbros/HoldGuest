@@ -49,6 +49,9 @@ class Misc {
     protected void loadConfig() {
         
         loadYamls();
+        
+        // temp fix to load custom string to PlayerEventListener.
+        plugin.keepinside = msgConfig.getString("keepinside");
 
         // Aaand, lets get the vars
         plugin.holdradius = config.getDouble("radius_block", 30);
@@ -62,13 +65,15 @@ class Misc {
         if(isVector(plugin.x,plugin.y,plugin.z)) {
             plugin.vector = getVector(plugin.x,plugin.y,plugin.z);
         }
-        
+        boolean active = true;
         // Is the plugin configured?
+        
+        
         if(plugin.x == 0 || plugin.y == 0 || plugin.z == 0) {
             plugin.log.info( customMessage("holdguestheader"));
             plugin.log.info("The plugin isn't configured and will not work correcly");
             plugin.log.info("until an admin have set the zone center.");
-            plugin.active = false;
+            active = false;
         }
         List<World> worlds = plugin.getServer().getWorlds();
         boolean exist = false;
@@ -83,8 +88,11 @@ class Misc {
             plugin.log.info( customMessage("holdguestheader"));
             plugin.log.info("The plugin isn't configured and will not work correcly");
             plugin.log.info("until an admin have set the zone center.");
-            plugin.active = false;
+            active = false;
         }
+        
+        plugin.active = active;
+        
         
         // Let's save all the configs, so we are sure they are being made.
         saveYamls();
@@ -177,9 +185,9 @@ class Misc {
     }
     
     protected void setRadius (double radius) {
-        config.set("holdradius", radius);
+        config.set("radius_block", radius);
         plugin.holdradius = radius;
-        plugin.saveConfig();
+        saveYamls();
     }
     
     private void firstRun() throws Exception {

@@ -2,7 +2,6 @@ package net.erbros.HoldGuest;
 
 import java.util.logging.Logger;
 
-import org.bukkit.event.Event;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
@@ -19,6 +18,7 @@ public class HoldGuest extends JavaPlugin {
     protected double z;
     protected World world;
     protected boolean active = true;
+    String keepinside = "";
 
     protected Misc misc = null;
     protected PlayerCache cache = null;
@@ -31,14 +31,11 @@ public class HoldGuest extends JavaPlugin {
 	
 	@Override
     public void onDisable() {
-		log.info(getDescription().getName() + ": has been disabled.");
 	}
 
 	@Override
     public void onEnable() {
         getDataFolder().mkdirs();
-	    // Show the plugin is enabled.
-        log.info("[" + getDescription().getName() + "] version " + getDescription().getVersion() + " is enabled." );
         // Lets get the misc class.
         misc = new Misc(this);
         // Get ready for the commands
@@ -47,7 +44,7 @@ public class HoldGuest extends JavaPlugin {
 
         PluginManager pm = this.getServer().getPluginManager();
         // Register player move events.
-		pm.registerEvent(Event.Type.PLAYER_MOVE, pEL, Event.Priority.Low, this);
+		pm.registerEvents(pEL, this);
 		
 		
 	}

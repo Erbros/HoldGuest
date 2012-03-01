@@ -1,6 +1,6 @@
 name: HoldGuest
 main: net.erbros.HoldGuest.HoldGuest
-version: 0.0.2
+version: 0.0.6
 author: Erbros
 website: www.erbros.net
 commands:
